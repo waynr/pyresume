@@ -28,7 +28,55 @@ Populate a predefined LaTeX template with contents defined in YAML to build your
 Features
 --------
 
-* TODO
+Current
++++++++
+
+N/A
+
+Planned
++++++++
+
+* Generate LaTeX resume from simple YAML list of attributes
+* Supports Jinja2 templates
+* Easily create new resume templates using cookiecutter
+
+Roadmap
+-------
+
+* Version 0.1.0
+
+  * Tests
+
+    * [x] default template tests
+    * scenario-based
+
+      * [ ] default template tests
+      * [ ] exteranl git repo template tests (http://)
+      * [ ] exteranl git repo template tests (https://)
+      * [ ] exteranl git repo template tests (git://)
+      * [ ] exteranl git repo template tests (ssh://)
+
+    * unit tests
+
+  * [ ] Find/create docker image to provide latex packages
+  * Command line
+
+    * [ ] parameter to specify location of LaTeX templates
+
+  * LaTeX Templates
+
+    * Initial templates packaged w/ pyresume
+
+      * [x] Jinja2 template with basic layout
+      * [x] stored as setuptools resource
+
+    * External Templates
+
+      * [ ] From local file
+      * [ ] From git repo
+      * [ ] Cookiecutter repo for new template repos
+
+  * Examples
 
 Credits
 ---------

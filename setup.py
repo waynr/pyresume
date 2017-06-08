@@ -31,6 +31,9 @@ setup(
     ],
     package_dir={'pyresume':
                  'pyresume'},
+    package_data={
+        'pyresume': 'templates/*.jinja2'
+    },
     entry_points={
         'console_scripts': [
             'pyresume=pyresume.cli:main'
