@@ -1,0 +1,193 @@
+\documentclass[10pt]{article} %Sets the default text size to 11pt and class to article.
+
+\usepackage{multicol}
+\usepackage[colorlinks=true]{hyperref}
+
+\hoffset=0.0in
+\voffset=0.0in
+
+\textwidth=6.25in
+\textheight=9.0in
+
+\topmargin=0.0in
+
+\oddsidemargin=0.0in
+\evensidemargin=0.0in
+
+\marginparwidth=0.0in
+\marginparsep=0.0in
+
+\headheight=0pt
+\headsep=0pt 
+
+\begin{document}
+\centerline{
+  \LARGE\textbf{ {{ basic.name }} }
+}
+
+{% set count=0 %}
+{% for each in ["address", "contact", "websites"] %}
+  {% if each in basic %}
+    set count=count+1
+  {% endif %}
+
+{% endfor %}
+
+{% if count > 0 %}
+\begin{multicols}{ {{count}} }
+  {% if "address" in basic %}
+    {% for line in basic.address %}
+  \centerline{ {{line}} }
+    {% endfor %}
+  {% endif %}
+
+  {% if "contact" in basic and basic.contact|length > 0 %}
+  \columnbreak
+    {% if "phone" in basic.contact %}
+  \centerline{ {{basic.contact.phone}} }
+    {% endif %}
+    {% if "email" in basic.contact %}
+  \centerline{
+    \href{ mailto:{{basic.contact.email}} }{ {{basic.contact.email}} }
+    }
+    {% endif %}
+  {% endif %}
+
+  {% if "websites" in basic and basic.websites|length > 0 %}
+  \columnbreak
+    {% for website in basic.websites %}
+  \centerline{
+    \href{ {{website.url}} }{ {{website.text}} }
+  }
+    {% endfor %}
+  {% endif %}
+\end{multicols}
+{% endif %}
+
+{% if objective is not none %}
+\vskip \medskipamount
+\leaders\vrule width \textwidth\vskip0.8pt
+\vskip \medskipamount
+\nointerlineskip
+\centerline{\Large Objective}
+\smallskip
+
+{{ objective }}
+
+\bigskip
+{% endif %}
+
+{% if education is not none %}
+\vskip \medskipamount
+\leaders\vrule width \textwidth\vskip0.8pt
+\vskip \medskipamount
+\nointerlineskip
+\centerline{\Large Education}
+\smallskip
+
+{% for school in education %}
+\centerline{\large\bf
+  {{school.school}}
+  \hfill
+  {{school.startdate}} - {{school.enddate}}
+  }
+\smallskip
+  {% if ("degrees" in school and
+         school.degrees|length > 0) %}
+    {% for degree in school.degrees %}
+\noindent\textit{ {{degree}} }\\
+    {% endfor %}
+  {% endif %}
+  {% if ("achievements" in school and
+         school.achievements|length > 0) %}
+    {% for achievement in school.achievements %}
+\indent\textit{ {{achievement}} }\\
+    {% endfor %}
+  {% endif %}
+  {% if "gpa" in school %}
+\indent GPA: {{ school.gpa }}\\
+  {% endif %}
+{% endfor %}
+{% endif %}
+
+{% if experience is not none %}
+\vskip \medskipamount
+\leaders\vrule width \textwidth\vskip0.8pt
+\vskip \medskipamount
+\centerline{\Large Experience}
+\smallskip
+
+  {% for experience in experiences %}
+\centerline{\large\bf
+  {{experience.company}}: {{experience.title}}
+  \hfill
+  {{experience.startdate}} - {{experience.enddate}}
+  }
+\begin{itemize}
+    {% if experience.projects|length > 0 %}
+      {% for project in experience.projects %}
+  \item {{ project }}
+      {% endfor %}
+    {% endif %}
+\item {{experience
+\end{itemize}
+  {% endfor %}
+
+{% endif %}
+
+{% if (skills is not none and
+       skills|length > 0) %}
+\vskip \medskipamount
+\leaders\vrule width \textwidth\vskip0.8pt
+\vskip \medskipamount
+\nointerlineskip
+\centerline{\Large Skills}
+
+\begin{multicols}{ {{category.columns}} }
+  {% for category in skills %}
+  \noindent{\large\bf {{category.category}} }
+  \begin{itemize}
+    {% for item in category.items %}
+    \item {{item}}
+    {% endfor %}
+  \end{itemize}
+  {% endfor %}
+\end{multicols}
+\bigskip
+{% endif %}
+
+{% if (activities is not none and
+       activities|length > 0) %}
+\vskip \medskipamount
+\leaders\vrule width \textwidth\vskip0.8pt
+\vskip \medskipamount
+\nointerlineskip
+\centerline{\Large Activities}
+  {% for activity in activities %}
+\centerline{\large\bf
+  {{ activity.name }}
+  \hfill
+  {{activity.startdate}} - {{activity.enddate}}
+}
+  {% endfor %}
+\bigskip
+{% endif %}
+
+\vskip \medskipamount
+\leaders\vrule width \textwidth\vskip0.8pt
+\vskip \medskipamount
+\nointerlineskip
+\centerline{\Large References}
+{% if (references is not none and
+       references|length > 0) %}
+  {% for reference in references %}
+\centerline{\large\bf
+  {{ reference.name }}
+  \hfill
+  {{ reference.info }}
+}
+  {% endfor %}
+{% else %}
+\noindent{\bf Available on Request}
+{% endif %}
+\end{document}
