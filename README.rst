@@ -47,6 +47,7 @@ Roadmap
 
   * Tests
 
+    * [x] default template tests
     * scenario-based
 
       * [ ] default template tests
@@ -66,8 +67,8 @@ Roadmap
 
     * Initial templates packaged w/ pyresume
 
-      * [ ] Jinja2 template with basic layout
-      * [ ] stored as setuptools resource
+      * [x] Jinja2 template with basic layout
+      * [x] stored as setuptools resource
 
     * External Templates
 
