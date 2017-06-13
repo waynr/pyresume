@@ -27,7 +27,8 @@ def get_scenarios():
             scenario_dir = os.path.join(fixtures_top_dir, template)
             scenario_path = os.path.join(fixtures_top_dir, template, scenario)
             scenario_id = "{0}-{1}".format(template, scenario)
-            yaml_files = [n for n in os.listdir(scenario_path)
+            yaml_files = [os.path.join(scenario_path, n)
+                          for n in os.listdir(scenario_path)
                           if n.endswith(".yaml")]
             output_file = os.path.join(scenario_path, "expected.tex")
             scenarios.append((scenario_id, yaml_files, output_file))
@@ -49,8 +50,10 @@ def pytest_generate_tests(metafunc):
 class TestTemplateWithScenarios(object):
     scenarios = get_scenarios()
 
-    @pytest.mark.xfail
     def test_scenario_exists(self, yaml_file_list, expected_output_file):
-        pprint.pprint(yaml_file_list)
-        print(expected_output_file)
-        assert False
+        """ Validate that the files necessary to run additional tests are
+        available/accessible.
+        """
+        for f in yaml_file_list:
+            assert os.path.exists(f)
+        assert os.path.exists(expected_output_file)
