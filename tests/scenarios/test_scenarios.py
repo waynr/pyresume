@@ -57,3 +57,13 @@ class TestTemplateWithScenarios(object):
         for f in yaml_file_list:
             assert os.path.exists(f)
         assert os.path.exists(expected_output_file)
+
+    @pytest.mark.xfail
+    def test_scenario_expected_output(self,
+                                      yaml_file_list,
+                                      expected_output_file):
+        """ Validate that when the pyresume CLI is run with the given
+        scenario's yaml file(s), the output produce is equivalent to that
+        scenario's expected LaTeX output.
+        """
+        assert False
