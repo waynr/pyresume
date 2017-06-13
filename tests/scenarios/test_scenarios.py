@@ -11,7 +11,6 @@
 
 import os
 import pkg_resources
-import pprint
 
 from click.testing import CliRunner
 import pytest
@@ -51,8 +50,8 @@ class TestTemplateWithScenarios(object):
     scenarios = get_scenarios()
 
     def test_scenario_exists(self, yaml_file_list, expected_output_file):
-        """ Validate that the files necessary to run additional tests are
-        available/accessible.
+        """ Validate that the files necessary to run tests for each scenaro
+        exist.
         """
         for f in yaml_file_list:
             assert os.path.exists(f)
