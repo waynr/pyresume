@@ -1,0 +1,23 @@
+basic:
+  name: McMeow
+  address:
+    - 1537 Paper St
+  contact:
+    email: meow@meow.meow
+    phone: 867 5309
+  websites:
+    - text: Cats-R-Us
+      url: https://meow.meow/meow
+    - text: Cats-N-Computers
+      url: https://miaow.miaow/miaow
+
+education:
+  - school: Southern Meowniversity
+    startdate: Fall 2005
+    enddate: Spring 2009
+    degrees:
+      - Bachelor of Meow, Computer Meongineering
+      - "Minor, Mewthematics \\& Bit Meowta"
+    achievements:
+      - "Dean's Cat List"
+    gpa: 3.meow/4.0

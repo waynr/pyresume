@@ -11,8 +11,10 @@ basic:
     - text: Cats-N-Computers
       url: https://miaow.miaow/miaow
 
-references:
-  - name: "Master Meowna"
-    info: meowna@meow.meow
-  - name: "Senior Koshka"
-    info: koshka@meow.meow
+activities:
+  - name: "Meowing Endlessly"
+    startdate: "Fall 2016"
+    enddate: "Spring 2017"
+  - name: "Core Meower's Team"
+    startdate: "Fall 2010"
+    enddate: "Fall 2010"
