@@ -15,6 +15,8 @@ import pkg_resources
 from click.testing import CliRunner
 import pytest
 
+from pyresume.cli import main
+
 
 fixtures_top_dir = os.path.join(os.path.dirname(__file__), "fixtures")
 
@@ -57,7 +59,6 @@ class TestTemplateWithScenarios(object):
             assert os.path.exists(f)
         assert os.path.exists(expected_output_file)
 
-    @pytest.mark.xfail
     def test_scenario_expected_output(self,
                                       yaml_file_list,
                                       expected_output_file):
@@ -65,4 +66,11 @@ class TestTemplateWithScenarios(object):
         scenario's yaml file(s), the output produce is equivalent to that
         scenario's expected LaTeX output.
         """
-        assert False
+        runner = CliRunner()
+        result = runner.invoke(main, ["tex", "--stdout",] + yaml_file_list)
+        assert result.exit_code == 0
+
+        with open(expected_output_file, "r") as f:
+            expected_output = f.read()
+
+        assert result.output == expected_output
