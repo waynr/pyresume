@@ -67,7 +67,7 @@ class TestTemplateWithScenarios(object):
         scenario's expected LaTeX output.
         """
         runner = CliRunner()
-        result = runner.invoke(main, ["tex", "--stdout",] + yaml_file_list)
+        result = runner.invoke(main, ["tex",] + yaml_file_list)
         assert result.exit_code == 0
 
         with open(expected_output_file, "r") as f:
