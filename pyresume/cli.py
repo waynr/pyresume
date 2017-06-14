@@ -30,6 +30,8 @@ def tex(yaml_paths):
     that specified in earlier files.
     """
     env = Environment(
+        trim_blocks=True,
+        lstrip_blocks=True,
         loader=PackageLoader('pyresume', 'templates'),
     )
     template = env.get_template('standard.tex')

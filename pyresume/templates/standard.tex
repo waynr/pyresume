@@ -35,7 +35,8 @@
   {% endif %}
 
   {% if "contact" in basic and basic.contact|length > 0 %}
-  \columnbreak
+\columnbreak
+
     {% if "phone" in basic.contact %}
   \centerline{ {{basic.contact.phone}} }
     {% endif %}
@@ -47,17 +48,19 @@
   {% endif %}
 
   {% if "websites" in basic and basic.websites|length > 0 %}
-  \columnbreak
+\columnbreak
+
     {% for website in basic.websites %}
   \centerline{
     \href{ {{website.url}} }{ {{website.text}} }
   }
     {% endfor %}
   {% endif %}
+
 \end{multicols}
 {% endif %}
+{% if objective is defined %}
 
-{% if objective is not none %}
 \vskip \medskipamount
 \leaders\vrule width \textwidth\vskip0.8pt
 \vskip \medskipamount
@@ -69,8 +72,8 @@
 
 \bigskip
 {% endif %}
+{% if education is defined %}
 
-{% if education is not none %}
 \vskip \medskipamount
 \leaders\vrule width \textwidth\vskip0.8pt
 \vskip \medskipamount
@@ -88,7 +91,7 @@
   {% if ("degrees" in school and
          school.degrees|length > 0) %}
     {% for degree in school.degrees %}
-\noindent\textit{ {{degree}} }
+\noindent\textit{ {{degree}} }\\
     {% endfor %}
   {% endif %}
   {% if ("achievements" in school and
@@ -103,7 +106,7 @@
 {% endfor %}
 {% endif %}
 
-{% if experience is not none %}
+{% if experience is defined %}
 \vskip \medskipamount
 \leaders\vrule width \textwidth\vskip0.8pt
 \vskip \medskipamount
@@ -126,8 +129,8 @@
   {% endfor %}
 
 {% endif %}
+{% if (skills is defined and
 
-{% if (skills is not none and
        skills|length > 0) %}
 \vskip \medskipamount
 \leaders\vrule width \textwidth\vskip0.8pt
@@ -140,12 +143,13 @@
 \begin{multicols}{ {{category.columns}} }
     {% if category.skills[0] is mapping %}
       {% for item in category.skills %}
-    \noindent\textit { {{ item.category }} }
+  \noindent\textit { {{ item.category }} }
     \begin{itemize}
         {% for item in item.skills %}
       \item {{item}}
         {% endfor %}
     \end{itemize}
+
       {% endfor %}
     {% else %}
   \begin{itemize}
@@ -153,14 +157,15 @@
     \item {{item}}
       {% endfor %}
   \end{itemize}
+
     {% endif %}
 \end{multicols}
   {% endfor %}
 \bigskip
 {% endif %}
-
-{% if (activities is not none and
+{% if (activities is defined and
        activities|length > 0) %}
+                              %
 \vskip \medskipamount
 \leaders\vrule width \textwidth\vskip0.8pt
 \vskip \medskipamount
@@ -175,22 +180,23 @@
   {% endfor %}
 \bigskip
 {% endif %}
+{% if references is defined %}
 
 \vskip \medskipamount
 \leaders\vrule width \textwidth\vskip0.8pt
 \vskip \medskipamount
 \nointerlineskip
 \centerline{\Large References}
-{% if (references is not none and
-       references|length > 0) %}
-  {% for reference in references %}
+  {% if references|length > 0 %}
+    {% for reference in references %}
 \centerline{\large\bf
   {{ reference.name }}
   \hfill
   {{ reference.info }}
 }
-  {% endfor %}
-{% else %}
+    {% endfor %}
+  {% else %}
 \noindent{\bf Available on Request}
+  {% endif %}
 {% endif %}
 \end{document}
