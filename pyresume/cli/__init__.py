@@ -6,6 +6,8 @@ from jinja2 import Environment
 from jinja2 import PackageLoader
 import click
 
+from pyresume.cli.validation import validate_yaml_paths
+
 
 @click.group()
 def main():
@@ -25,6 +27,7 @@ def create():
 @create.command()
 @click.argument('yaml_paths',
                 nargs=-1,
+                callback=validate_yaml_paths,
                 type=click.Path(exists=True,
                                 file_okay=True,
                                 dir_okay=False,
