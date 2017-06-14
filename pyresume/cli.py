@@ -9,12 +9,20 @@ import click
 
 @click.group()
 def main():
-    """Console script for pyresume.
+    """ Console script for pyresume.
     """
     pass
 
 
-@main.command()
+@main.group()
+def create():
+    """ Create a resume of the specified type. The type is either "tex" by
+    default or whatever is specified as the next subcommand.
+    """
+    pass
+
+
+@create.command()
 @click.argument('yaml_paths',
                 nargs=-1,
                 type=click.Path(exists=True,
