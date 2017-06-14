@@ -31,52 +31,111 @@ Features
 Current
 +++++++
 
-N/A
+* Generate LaTeX resume from simple YAML list of attributes.
+* Uses single simple template for consistent look and feel between different
+  combinations of information you might want to include in your resume.
 
 Planned
 +++++++
 
-* Generate LaTeX resume from simple YAML list of attributes
-* Supports Jinja2 templates
-* Easily create new resume templates using cookiecutter
+* Support externally-defined Jinja2 templates.
+* Easily create new resume templates using cookiecutter.
 
 Roadmap
 -------
 
-* Version 0.1.0
+Version 0.1.0
++++++++++++++
 
-  * Tests
+* Meta
 
-    * [x] default template tests
-    * scenario-based
+  * [ ] Consider different name for tool.
+  * (last) Post link to repositories and readthedocs in public forums:
 
-      * [ ] default template tests
-      * [ ] exteranl git repo template tests (http://)
-      * [ ] exteranl git repo template tests (https://)
-      * [ ] exteranl git repo template tests (git://)
-      * [ ] exteranl git repo template tests (ssh://)
+    * reddit
+    * facebook
+    * linkedin
 
-    * unit tests
+* Documentation
 
-  * [ ] Find/create docker image to provide latex packages
-  * Command line
+  * [ ] Introduce problem being solved.
+  * [ ] Refer to readthedocs for bulk of documentation.
+  * [ ] Research and refer to similar tools/services.
 
-    * [ ] parameter to specify location of LaTeX templates
+  * Basic Usage instructions
 
-  * LaTeX Templates
+    * [ ] Running from CLI on Linux
+    * [ ] Running from CLI using Docker on any platform
 
-    * Initial templates packaged w/ pyresume
+  * Advanced Usage instructions
 
-      * [x] Jinja2 template with basic layout
-      * [x] stored as setuptools resource
+    * [ ] Generate scenario test fixtures
+    * [ ] Describe workflow for storing resume in a repo as yaml and using
+      pyresume to generate PDFs.
 
-    * External Templates
+* Examples
 
-      * [ ] From local file
-      * [ ] From git repo
-      * [ ] Cookiecutter repo for new template repos
+  * [ ] Create Example resume repository
 
-  * Examples
+* Tests
+
+  * scenario
+
+    * docker/texlive integration tests to validate PDF generation
+
+      * [ ] Find/create docker image to provide latex packages
+      * [ ] Get docker integration test(s) running locally.
+      * [ ] Research docker in Travis, figure out what kind of foolery is
+        necessary to make docker tests run there.
+
+* Templates
+
+  * Initial templates packaged w/ pyresume
+
+    * [x] Jinja2 template with basic layout
+    * [x] stored as setuptools resource
+
+* Command line
+
+  * [x] change 'tex' subcommand to 'create'/'create tex'
+
+Version 0.2.0
++++++++++++++
+
+* Meta
+  
+  * [ ] Move this Roadmap elsewhere, maybe generate github or bitbucket issues
+    and labels to track the work.
+
+* User Input Validation
+
+  * Use voluptuous to validate data structures passed in by users.
+
+    * [ ] Implement validation in same directory as template.
+    * [ ] Write tests for validation function to concretely define various
+      corner cases (the exceptions and/or warnings producted by validation).
+  
+* External Templates
+
+  * [ ] From local file
+  * [ ] From git repo
+  * [ ] Cookiecutter repo for new template repos
+
+* Tests
+
+  * scenario-based
+
+    * [ ] external git repo template tests (http://)
+    * [ ] external git repo template tests (https://)
+    * [ ] external git repo template tests (git://)
+    * [ ] external git repo template tests (ssh://)
+
+* Command line
+
+  * [ ] parameter to specify location of LaTeX templates
+  * [ ] add 'create pdf' subcommand that uses docker (if available) to run texlive
+    and generate a resume
+
 
 Credits
 ---------
@@ -85,4 +144,3 @@ This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypack
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 .. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
-
