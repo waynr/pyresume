@@ -25,14 +25,7 @@
   \LARGE\textbf{ {{ basic.name }} }
 }
 
-{% set count=0 %}
-{% for each in ["address", "contact", "websites"] %}
-  {% if each in basic %}
-    set count=count+1
-  {% endif %}
-
-{% endfor %}
-
+{% set count=basic|length-1 %}
 {% if count > 0 %}
 \begin{multicols}{ {{count}} }
   {% if "address" in basic %}
@@ -95,17 +88,17 @@
   {% if ("degrees" in school and
          school.degrees|length > 0) %}
     {% for degree in school.degrees %}
-\noindent\textit{ {{degree}} }\\
+\noindent\textit{ {{degree}} }
     {% endfor %}
   {% endif %}
   {% if ("achievements" in school and
          school.achievements|length > 0) %}
     {% for achievement in school.achievements %}
-\indent\textit{ {{achievement}} }\\
+\indent\textit{ {{achievement}} }
     {% endfor %}
   {% endif %}
   {% if "gpa" in school %}
-\indent GPA: {{ school.gpa }}\\
+\indent GPA: {{ school.gpa }}
   {% endif %}
 {% endfor %}
 {% endif %}
@@ -129,7 +122,6 @@
   \item {{ project }}
       {% endfor %}
     {% endif %}
-\item {{experience}}
 \end{itemize}
   {% endfor %}
 
@@ -143,16 +135,27 @@
 \nointerlineskip
 \centerline{\Large Skills}
 
-\begin{multicols}{ {{category.columns}} }
   {% for category in skills %}
-  \noindent{\large\bf {{category.category}} }
+\noindent{\large\bf {{category.category}} }
+\begin{multicols}{ {{category.columns}} }
+    {% if category.skills[0] is mapping %}
+      {% for item in category.skills %}
+    \noindent\textit { {{ item.category }} }
+    \begin{itemize}
+        {% for item in item.skills %}
+      \item {{item}}
+        {% endfor %}
+    \end{itemize}
+      {% endfor %}
+    {% else %}
   \begin{itemize}
-    {% for item in category.items %}
+      {% for item in category.skills %}
     \item {{item}}
-    {% endfor %}
+      {% endfor %}
   \end{itemize}
-  {% endfor %}
+    {% endif %}
 \end{multicols}
+  {% endfor %}
 \bigskip
 {% endif %}
 
