@@ -113,15 +113,15 @@
 \centerline{\Large Experience}
 \smallskip
 
-  {% for experience in experiences %}
+  {% for job in experience %}
 \centerline{\large\bf
-  {{experience.company}}: {{experience.title}}
+  {{job.company}}: {{job.title}}
   \hfill
-  {{experience.startdate}} - {{experience.enddate}}
+  {{job.startdate}} - {{job.enddate}}
   }
 \begin{itemize}
-    {% if experience.projects|length > 0 %}
-      {% for project in experience.projects %}
+    {% if job.projects|length > 0 %}
+      {% for project in job.projects %}
   \item {{ project }}
       {% endfor %}
     {% endif %}
