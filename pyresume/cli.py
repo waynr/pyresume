@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-import pkg_resources
 import yaml
 
-from jinja2 import Template
+from jinja2 import Environment
+from jinja2 import PackageLoader
 import click
 
 
@@ -29,9 +29,10 @@ def tex(yaml_paths):
     output on stdout. Note that resume data in successive yaml files overrides
     that specified in earlier files.
     """
-    template_string = pkg_resources.resource_string(
-        'pyresume', 'templates/standard.tex').decode()
-    template = Template(template_string)
+    env = Environment(
+        loader=PackageLoader('pyresume', 'templates'),
+    )
+    template = env.get_template('standard.tex')
 
     resume_data = {}
     for path in yaml_paths:
