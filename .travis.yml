@@ -22,9 +22,13 @@ deploy:
   provider: pypi
   user: waynr
 env:
-- TOXENV=py35
-- TOXENV=flake8
+  - TOXENV=py35
+  - TOXENV=flake8
 install: pip install -U tox
 language: python
 python: 3.5
 script: tox -e ${TOXENV}
+
+sudo: required
+services:
+  - docker

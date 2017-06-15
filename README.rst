@@ -85,7 +85,7 @@ Version 0.1.0
 
       * [x] Find/create docker image to provide latex packages
       * [x] Get docker integration test(s) running locally.
-      * [ ] Research docker in Travis, figure out what kind of foolery is
+      * [x] Research docker in Travis, figure out what kind of foolery is
         necessary to make docker tests run there.
 
 * Templates
