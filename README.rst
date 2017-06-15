@@ -83,8 +83,8 @@ Version 0.1.0
 
     * docker/texlive integration tests to validate PDF generation
 
-      * [ ] Find/create docker image to provide latex packages
-      * [ ] Get docker integration test(s) running locally.
+      * [x] Find/create docker image to provide latex packages
+      * [x] Get docker integration test(s) running locally.
       * [ ] Research docker in Travis, figure out what kind of foolery is
         necessary to make docker tests run there.
 
@@ -103,7 +103,7 @@ Version 0.2.0
 +++++++++++++
 
 * Meta
-  
+
   * [ ] Move this Roadmap elsewhere, maybe generate github or bitbucket issues
     and labels to track the work.
 
@@ -114,7 +114,7 @@ Version 0.2.0
     * [ ] Implement validation in same directory as template.
     * [ ] Write tests for validation function to concretely define various
       corner cases (the exceptions and/or warnings producted by validation).
-  
+
 * External Templates
 
   * [ ] From local file
