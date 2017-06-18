@@ -14,7 +14,7 @@ template.
 Before you begin, please be sure to read :ref:`installation instructions
 <inst-inst>`. If you have any trouble, please be sure that all the
 :ref:`reqs-reqs` have been satisfied. Also consider :ref:`submitting feedback
-<submit-feedback>` if you encounter any issues (bug, problem with docs, deepfelt
+<feedback>` if you encounter any issues (bug, problem with docs, deepfelt
 yearning for existential meaning)
 
 You will have the best chance of successfully using ``pyresume`` if you are
