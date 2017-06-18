@@ -79,7 +79,8 @@ class TestTemplateWithScenarios(object):
                                       yaml_file_list,
                                       expected_output_file,
                                       tmpdir):
-        """ Validate that the generated tex output can be used to produce a PDF.
+        """ Validate that the generated tex output can be used to produce a
+        PDF using a known, publicly-available docker image.
         """
         docker_api_version = utils.get_subprocess_output(
             'docker version --format \'{{.Server.APIVersion}}\'')

@@ -18,7 +18,15 @@ PyResume Builder
      :alt: Updates
 
 
-Populate a predefined LaTeX template with contents defined in YAML to build your resume.
+Do you like updating your resume? Are you satisfied with the layout and
+formatting? Do you ever wish you could try different styles without going
+through the trouble of manually reformatting each time? Well now you can!
+
+PyResume Builder is a command line tool that populates a LaTeX template from
+contents defined in a YAML file. By storing the contents of your resume in a
+human-readable markup language and generating a LaTeX or PDF file from that you
+are free to try alternative templates and generate resumes in different formats
+without the tedium of manually reformatting.
 
 
 * Free software: GNU General Public License v3
@@ -31,15 +39,26 @@ Features
 Current
 +++++++
 
-* Generate LaTeX resume from simple YAML list of attributes.
-* Uses single simple template for consistent look and feel between different
+* Store resume contents (skills, experience, contact info, etc) in a YAML file
+  for ease of updating and version control convenience.
+* Templated LaTeX approach allows for consistent look and feel between different
   combinations of information you might want to include in your resume.
+* Default LaTeX template includes support for:
+
+  * Contact info
+  * Education  
+  * Experience
+  * Skills (up to two levels of subcategories supported)
+  * Activities
+  * Education
+  * References
 
 Planned
 +++++++
 
-* Support externally-defined Jinja2 templates.
-* Easily create new resume templates using cookiecutter.
+* Support externally-defined Jinja2 LaTeX templates.
+* Support some kind of html output format.
+* Create new resume templates using cookiecutter.
 
 Roadmap
 -------
@@ -58,20 +77,19 @@ Version 0.1.0
 
 * Documentation
 
-  * [ ] Introduce problem being solved.
-  * [ ] Refer to readthedocs for bulk of documentation.
+  * [x] Introduce problem being solved.
   * [ ] Research and refer to similar tools/services.
 
   * Basic Usage instructions
 
-    * [ ] Running from CLI on Linux
-    * [ ] Running from CLI using Docker on any platform
+    * [x] Running from CLI on Linux
+    * [x] Running from CLI using Docker on any platform
 
   * Advanced Usage instructions
 
     * [ ] Generate scenario test fixtures
-    * [ ] Describe workflow for storing resume in a repo as yaml and using
-      pyresume to generate PDFs.
+    * [x] Describe workflow for storing resume in a repo as yaml and using
+      pyresume+latex to generate PDFs.
 
 * Examples
 
