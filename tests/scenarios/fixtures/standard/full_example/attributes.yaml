@@ -51,34 +51,21 @@ activities:
     enddate: "Fall 2010"
 
 skills:
-  - category: Programming Languages
+  - category: Caterwauling Languages
     columns: "3"
     skills:
       - category: Advanced
         skills:
-          - Python
-          - Bash
+          - Mew
+          - Pur
       - category: Intermediate
         skills:
-          - C
-          - Java
-          - Groovy
-          - Ruby
+          - Meow
+          - Mrow
       - category: Beginner
         skills:
-          - Awk
-          - Sed
-          - Golang
-          - Rust
-          - C++
-          - Haskel
-          - Clojure
-          - Vimscript
-          - Javascript
-          - Verilog
-          - SQL
-          - Assembly
-          - HTML/CSS
+          - Miaow
+          - Meao
   - category: Cat Skills
     columns: "5"
     skills:
