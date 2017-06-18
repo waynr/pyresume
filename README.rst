@@ -78,7 +78,7 @@ Version 0.1.0
 * Documentation
 
   * [x] Introduce problem being solved.
-  * [ ] Research and refer to similar tools/services.
+  * [x] Research and refer to similar tools/services.
 
   * Basic Usage instructions
 
@@ -153,6 +153,16 @@ Version 0.2.0
   * [ ] parameter to specify location of LaTeX templates
   * [ ] add 'create pdf' subcommand that uses docker (if available) to run texlive
     and generate a resume
+
+
+Similar Projects
+----------------
+
+http://www.resumebuilder.org
+  This site let's you sign in, enter your resume data in a series of web forms,
+  and generate a resume from predefined templates. Also seems to include all
+  kinds of helpful advice about resume layouts and being more of a rock star
+  potential employee.
 
 
 Credits
