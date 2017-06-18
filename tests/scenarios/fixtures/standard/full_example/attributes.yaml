@@ -1,0 +1,76 @@
+basic:
+  name: McMeow
+  address:
+    - 1537 Paper St
+  contact:
+    email: meow@meow.meow
+    phone: 867 5309
+  websites:
+    - text: Cats-R-Us
+      url: https://meow.meow/meow
+    - text: Cats-N-Computers
+      url: https://miaow.miaow/miaow
+
+objective: >
+  I am currently looking for someone to pay me to meow.
+
+education:
+  - school: Southern Meowniversity
+    startdate: Fall 2005
+    enddate: Spring 2009
+    degrees:
+      - Bachelor of Meow, Computer Meongineering
+      - "Minor, Mewthematics \\& Bit Meowta"
+    achievements:
+      - "Dean's Cat List"
+    gpa: 3.meow/4.0
+
+experience:
+  - company: Meow Meow Inc
+    title: Lead Meower
+    startdate: April 2016
+    enddate: May 2017
+    projects:
+      - "Tech lead on project involving meowing until food appears."
+      - "Mrowled at the moon."
+  
+  - company: Mewling Daycare
+    title: Quality Eng.
+    startdate: March 2014
+    enddate: March 2016
+    projects:
+      - "Designated mew troubleshooter."
+      - "Trained 5994 kittens in litterbox usage."
+
+activities:
+  - name: "Meowing Endlessly"
+    startdate: "Fall 2016"
+    enddate: "Spring 2017"
+  - name: "Core Meower's Team"
+    startdate: "Fall 2010"
+    enddate: "Fall 2010"
+
+skills:
+  - category: Caterwauling Languages
+    columns: "3"
+    skills:
+      - category: Advanced
+        skills:
+          - Mew
+          - Pur
+      - category: Intermediate
+        skills:
+          - Meow
+          - Mrow
+      - category: Beginner
+        skills:
+          - Miaow
+          - Meao
+  - category: Cat Skills
+    columns: "5"
+    skills:
+      - meowing
+      - sleeping
+      - eating
+      - pooping
+      - chasing insects

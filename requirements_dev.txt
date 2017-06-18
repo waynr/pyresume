@@ -1,11 +1,13 @@
 pip==9.0.1
 bumpversion==0.5.3
+docker==2.3.0
 wheel==0.29.0
 watchdog==0.8.3
 flake8==3.3.0
 tox==2.7.0
 coverage==4.4.1
 Sphinx==1.6.2
+pygments==2.2.0
 cryptography==1.9
 PyYAML==3.12
 pytest==3.1.2

@@ -1,0 +1,18 @@
+basic:
+  name: McMeow
+  address:
+    - 1537 Paper St
+  contact:
+    email: meow@meow.meow
+    phone: 867 5309
+  websites:
+    - text: Cats-R-Us
+      url: https://meow.meow/meow
+    - text: Cats-N-Computers
+      url: https://miaow.miaow/miaow
+
+references:
+  - name: "Master Meowna"
+    info: meowna@meow.meow
+  - name: "Senior Koshka"
+    info: koshka@meow.meow

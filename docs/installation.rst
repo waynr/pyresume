@@ -1,9 +1,37 @@
 .. highlight:: shell
+.. _inst-inst:
 
 ============
 Installation
 ============
 
+.. _reqs-reqs:
+
+Requirements
+------------
+
+Python >= 3.5
+  The only tested version of python so far. 
+
+For Generating PDFs
++++++++++++++++++++
+
+One of the following tools should be sufficient to actually generate PDFs:
+
+docker
+  Provides full texlive installation for the sake of producing PDF output in
+  tests. In the future there will be a ``pyresume create pdf`` command that uses
+  this image to generate PDFs directly for users.
+texlive (or some other LaTeX tool)
+  A relatively minimal installation should take care of most resume-generating
+  needs.
+
+Installation steps for either of these will vary depending on the operating
+system (ie windows, mac, linux, etc); in the case of linux, your OS's package
+management tool (yum, apt, nix, pacman, emerge, etc); and on your OS version.
+However, I would recommend trying docker first since that will open up other
+avenues of computer usage for you.
+  
 
 Stable release
 --------------

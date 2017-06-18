@@ -12,6 +12,8 @@ You can contribute in many ways:
 Types of Contributions
 ----------------------
 
+.. _report-bugs:
+
 Report Bugs
 ~~~~~~~~~~~
 
@@ -35,12 +37,16 @@ Implement Features
 Look through the GitHub issues for features. Anything tagged with "enhancement"
 and "help wanted" is open to whoever wants to implement it.
 
+.. _write-documentation:
+
 Write Documentation
 ~~~~~~~~~~~~~~~~~~~
 
 PyResume Builder could always use more documentation, whether as part of the
 official PyResume Builder docs, in docstrings, or even on the web in blog posts,
 articles, and such.
+
+.. _feedback:
 
 Submit Feedback
 ~~~~~~~~~~~~~~~
@@ -101,14 +107,45 @@ Before you submit a pull request, check that it meets these guidelines:
 2. If the pull request adds functionality, the docs should be updated. Put
    your new functionality into a function with a docstring, and add the
    feature to the list in README.rst.
-3. The pull request should work for Python 2.6, 2.7, 3.3, 3.4 and 3.5, and for PyPy. Check
-   https://travis-ci.org/waynr/pyresume/pull_requests
-   and make sure that the tests pass for all supported Python versions.
+3. The pull request should work for Python 3.5. Check
+   https://travis-ci.org/waynr/pyresume/pull_requests and make sure that the
+   tests pass for all supported Python versions.
 
-Tips
-----
+Testing Tips
+------------
 
-To run a subset of tests::
+Run a Subset of tests
++++++++++++++++++++++
 
-$ py.test tests.test_pyresume
+::
 
+  $ py.test tests.test_pyresume
+
+
+Generate New Test Fixtures
+++++++++++++++++++++++++++
+
+To generate fixtures that use the standard/default resume template::
+
+   $ mkdir /path/to/pyresume/tests/scenarios/fixtures/standard/<new-scenario>/
+   $ $EDITOR /path/to/pyresume/tests/scenarios/fixtures/standard/<new-scenario>/attributes.yaml
+   $ pyresume create tex > /path/to/pyresume/tests/scenarios/fixtures/standard/<new-scenario>/attributes.tex
+
+You can validate this works as expected by running the tests::
+
+   $ py.test tests.scenarios.test_scenarios
+
+Alternatively, you could just run the entire test suite::
+
+   $ tox -e py35
+
+Assuming there new resume templates are eventually added, creating the fixture
+might look something like::
+
+   $ mkdir /path/to/pyresume/tests/scenarios/fixtures/<new-template-name>/<new-scenario>/
+   $ $EDITOR /path/to/pyresume/tests/scenarios/fixtures/<new-template-name>/<new-scenario>/attributes.yaml
+   $ pyresume create --template <new-template-name> tex > /path/to/pyresume/tests/scenarios/fixtures/<new-template-name>/<new-scenario>/attributes.tex
+
+And of course you will want to commit these to the git repo::
+  
+   $ git add /path/to/pyresume/tests/scenarios/fixtures/<new-template-name>/<new-scenario>/

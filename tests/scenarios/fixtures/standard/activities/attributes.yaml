@@ -1,0 +1,20 @@
+basic:
+  name: McMeow
+  address:
+    - 1537 Paper St
+  contact:
+    email: meow@meow.meow
+    phone: 867 5309
+  websites:
+    - text: Cats-R-Us
+      url: https://meow.meow/meow
+    - text: Cats-N-Computers
+      url: https://miaow.miaow/miaow
+
+activities:
+  - name: "Meowing Endlessly"
+    startdate: "Fall 2016"
+    enddate: "Spring 2017"
+  - name: "Core Meower's Team"
+    startdate: "Fall 2010"
+    enddate: "Fall 2010"

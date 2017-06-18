@@ -1,0 +1,50 @@
+basic:
+  name: McMeow
+  address:
+    - 1537 Paper St
+  contact:
+    email: meow@meow.meow
+    phone: 867 5309
+  websites:
+    - text: Cats-R-Us
+      url: https://meow.meow/meow
+    - text: Cats-N-Computers
+      url: https://miaow.miaow/miaow
+
+skills:
+  - category: Programming Languages
+    columns: "3"
+    skills:
+      - category: Advanced
+        skills:
+          - Python
+          - Bash
+      - category: Intermediate
+        skills:
+          - C
+          - Java
+          - Groovy
+          - Ruby
+      - category: Beginner
+        skills:
+          - Awk
+          - Sed
+          - Golang
+          - Rust
+          - C++
+          - Haskel
+          - Clojure
+          - Vimscript
+          - Javascript
+          - Verilog
+          - SQL
+          - Assembly
+          - HTML/CSS
+  - category: Cat Skills
+    columns: "5"
+    skills:
+      - meowing
+      - sleeping
+      - eating
+      - pooping
+      - chasing insects
