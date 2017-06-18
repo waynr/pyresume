@@ -66,15 +66,6 @@ Roadmap
 Version 0.1.0
 +++++++++++++
 
-* Meta
-
-  * [ ] Consider different name for tool.
-  * (last) Post link to repositories and readthedocs in public forums:
-
-    * reddit
-    * facebook
-    * linkedin
-
 * Documentation
 
   * [x] Introduce problem being solved.
@@ -120,6 +111,12 @@ Version 0.2.0
 
   * [ ] Move this Roadmap elsewhere, maybe generate github or bitbucket issues
     and labels to track the work.
+  * Post link to repositories and readthedocs in public forums:
+
+    * [ ] reddit
+    * [ ] facebook
+    * [ ] linkedin
+
 
 * User Input Validation
 
