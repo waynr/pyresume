@@ -87,13 +87,9 @@ Version 0.1.0
 
   * Advanced Usage instructions
 
-    * [ ] Generate scenario test fixtures
+    * [x] Generate scenario test fixtures
     * [x] Describe workflow for storing resume in a repo as yaml and using
       pyresume+latex to generate PDFs.
-
-* Examples
-
-  * [ ] Create Example resume repository
 
 * Tests
 
