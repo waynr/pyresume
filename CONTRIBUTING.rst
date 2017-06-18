@@ -115,7 +115,7 @@ Testing Tips
 ------------
 
 Run a Subset of tests
-+++++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~
 
 ::
 
@@ -123,7 +123,7 @@ Run a Subset of tests
 
 
 Generate New Test Fixtures
-++++++++++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To generate fixtures that use the standard/default resume template::
 
