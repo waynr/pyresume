@@ -66,23 +66,31 @@ Get Started!
 Ready to contribute? Here's how to set up `pyresume` for local development.
 
 1. Fork the `pyresume` repo on GitHub.
-2. Clone your fork locally::
+2. Clone your fork locally:
+
+.. code-block:: console
 
     $ git clone git@github.com:your_name_here/pyresume.git
 
-3. Install your local copy into a virtualenv. Assuming you have virtualenvwrapper installed, this is how you set up your fork for local development::
+3. Install your local copy into a virtualenv. Assuming you have virtualenvwrapper installed, this is how you set up your fork for local development:
+
+.. code-block:: console
 
     $ mkvirtualenv pyresume
     $ cd pyresume/
     $ python setup.py develop
 
-4. Create a branch for local development::
+4. Create a branch for local development:
+
+.. code-block:: console
 
     $ git checkout -b name-of-your-bugfix-or-feature
 
    Now you can make your changes locally.
 
-5. When you're done making changes, check that your changes pass flake8 and the tests, including testing other Python versions with tox::
+5. When you're done making changes, check that your changes pass flake8 and the tests, including testing other Python versions with tox:
+
+.. code-block:: console
 
     $ flake8 pyresume tests
     $ python setup.py test or py.test
@@ -90,7 +98,9 @@ Ready to contribute? Here's how to set up `pyresume` for local development.
 
    To get flake8 and tox, just pip install them into your virtualenv.
 
-6. Commit your changes and push your branch to GitHub::
+6. Commit your changes and push your branch to GitHub:
+
+.. code-block:: console
 
     $ git add .
     $ git commit -m "Your detailed description of your changes."
@@ -117,35 +127,44 @@ Testing Tips
 Run a Subset of tests
 ~~~~~~~~~~~~~~~~~~~~~
 
-::
-
+.. code-block:: console
   $ py.test tests.test_pyresume
 
 
 Generate New Test Fixtures
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To generate fixtures that use the standard/default resume template::
+To generate fixtures that use the standard/default resume template
+
+.. code-block:: console
 
    $ mkdir /path/to/pyresume/tests/scenarios/fixtures/standard/<new-scenario>/
    $ $EDITOR /path/to/pyresume/tests/scenarios/fixtures/standard/<new-scenario>/attributes.yaml
    $ pyresume create tex > /path/to/pyresume/tests/scenarios/fixtures/standard/<new-scenario>/attributes.tex
 
-You can validate this works as expected by running the tests::
+You can validate this works as expected by running the tests
+
+.. code-block:: console
 
    $ py.test tests.scenarios.test_scenarios
 
-Alternatively, you could just run the entire test suite::
+Alternatively, you could just run the entire test suite
+
+.. code-block:: console
 
    $ tox -e py35
 
 Assuming there new resume templates are eventually added, creating the fixture
-might look something like::
+might look something like:
+
+.. code-block:: console
 
    $ mkdir /path/to/pyresume/tests/scenarios/fixtures/<new-template-name>/<new-scenario>/
    $ $EDITOR /path/to/pyresume/tests/scenarios/fixtures/<new-template-name>/<new-scenario>/attributes.yaml
    $ pyresume create --template <new-template-name> tex > /path/to/pyresume/tests/scenarios/fixtures/<new-template-name>/<new-scenario>/attributes.tex
 
-And of course you will want to commit these to the git repo::
-  
+And of course you will want to commit these to the git repo
+
+.. code-block:: console
+
    $ git add /path/to/pyresume/tests/scenarios/fixtures/<new-template-name>/<new-scenario>/
