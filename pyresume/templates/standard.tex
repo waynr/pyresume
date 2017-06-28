@@ -72,40 +72,6 @@
 
 \bigskip
 {% endif %}
-{% if education is defined %}
-
-\vskip \medskipamount
-\leaders\vrule width \textwidth\vskip0.8pt
-\vskip \medskipamount
-\nointerlineskip
-\centerline{\Large Education}
-\smallskip
-
-{% for school in education %}
-\centerline{\large\bf
-  {{school.school}}
-  \hfill
-  {{school.startdate}} - {{school.enddate}}
-  }
-\smallskip
-  {% if ("degrees" in school and
-         school.degrees|length > 0) %}
-    {% for degree in school.degrees %}
-\noindent\textit{ {{degree}} }\\
-    {% endfor %}
-  {% endif %}
-  {% if ("achievements" in school and
-         school.achievements|length > 0) %}
-    {% for achievement in school.achievements %}
-\indent\textit{ {{achievement}} }
-    {% endfor %}
-  {% endif %}
-  {% if "gpa" in school %}
-\indent GPA: {{ school.gpa }}
-  {% endif %}
-{% endfor %}
-{% endif %}
-
 {% if experience is defined %}
 \vskip \medskipamount
 \leaders\vrule width \textwidth\vskip0.8pt
@@ -162,6 +128,39 @@
 \end{multicols}
   {% endfor %}
 \bigskip
+{% endif %}
+{% if education is defined %}
+
+\vskip \medskipamount
+\leaders\vrule width \textwidth\vskip0.8pt
+\vskip \medskipamount
+\nointerlineskip
+\centerline{\Large Education}
+\smallskip
+
+{% for school in education %}
+\centerline{\large\bf
+  {{school.school}}
+  \hfill
+  {{school.startdate}} - {{school.enddate}}
+  }
+\smallskip
+  {% if ("degrees" in school and
+         school.degrees|length > 0) %}
+    {% for degree in school.degrees %}
+\noindent\textit{ {{degree}} }\\
+    {% endfor %}
+  {% endif %}
+  {% if ("achievements" in school and
+         school.achievements|length > 0) %}
+    {% for achievement in school.achievements %}
+\indent\textit{ {{achievement}} }
+    {% endfor %}
+  {% endif %}
+  {% if "gpa" in school %}
+\indent GPA: {{ school.gpa }}
+  {% endif %}
+{% endfor %}
 {% endif %}
 {% if (activities is defined and
        activities|length > 0) %}
