@@ -73,6 +73,25 @@
 
 \bigskip
 {% endif %}
+{% if (skills is defined and
+       skills|length > 0) %}
+\sectionheader{Technical Skills Summary}
+
+\noindent\begin{tabular}{ l p{4.5in} }
+
+  {% for category in skills %}
+    {% if category.skills[0] is mapping %}
+      {% for item in category.skills %}
+{{category.category}} - {{ item.category }} & {{ item.skills|join(', ')}} \\
+      {% endfor %}
+    {% else %}
+{{category.category}} & {{ category.skills|join(', ') }} \\
+    {% endif %}
+  {% endfor %}
+
+\end{tabular}
+\bigskip
+{% endif %}
 {% if experience is defined %}
 \sectionheader{Experience}
 
@@ -91,40 +110,6 @@
 \end{itemize}
   {% endfor %}
 
-{% endif %}
-{% if (skills is defined and
-
-       skills|length > 0) %}
-\vskip \medskipamount
-\leaders\vrule width \textwidth\vskip0.8pt
-\vskip \medskipamount
-\nointerlineskip
-\centerline{\Large Skills}
-
-  {% for category in skills %}
-\noindent{\large\bf {{category.category}} }
-\begin{multicols}{ {{category.columns}} }
-    {% if category.skills[0] is mapping %}
-      {% for item in category.skills %}
-  \noindent\textit { {{ item.category }} }
-    \begin{itemize}
-        {% for item in item.skills %}
-      \item {{item}}
-        {% endfor %}
-    \end{itemize}
-
-      {% endfor %}
-    {% else %}
-  \begin{itemize}
-      {% for item in category.skills %}
-    \item {{item}}
-      {% endfor %}
-  \end{itemize}
-
-    {% endif %}
-\end{multicols}
-  {% endfor %}
-\bigskip
 {% endif %}
 {% if education is defined %}
 
