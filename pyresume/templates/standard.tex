@@ -1,6 +1,8 @@
 \documentclass[10pt]{article} %Sets the default text size to 11pt and class to article.
 
-\usepackage{multicol}
+\usepackage{tabu}
+\usepackage{alltt}
+
 \usepackage[colorlinks=true]{hyperref}
 
 \hoffset=0.0in
@@ -33,51 +35,56 @@
 
 {% set count=basic|length-1 %}
 {% if count > 0 %}
-\begin{multicols}{ {{count}} }
+  \vskip \bigskipamount
+  {% if count == 1 %}
+\noindent\begin{tabu*} to \textwidth { @{} X[1,c] }
+  {% elif count == 2 %}
+\noindent\begin{tabu*} to \textwidth { @{} X[1,c] X[1,l] }
+  {% elif count == 3 %}
+\noindent\begin{tabu*} to \textwidth { @{} X[1,c] X[1.2,l] X[1.4,l] }
+  {% endif %}
   {% if "address" in basic %}
+  \begin{Verbatim}
     {% for line in basic.address %}
-  \centerline{ {{line}} }
+  {{line}}\par
     {% endfor %}
+  \end{Verbatim}
+    {% if "address" in basic or "websites" in basic %}
+&
+    {% endif %}
   {% endif %}
-
   {% if "contact" in basic and basic.contact|length > 0 %}
-\columnbreak
-
-    {% if "phone" in basic.contact %}
-  \centerline{ {{basic.contact.phone}} }
-    {% endif %}
+  \begin{Verbatim}
     {% if "email" in basic.contact %}
-  \centerline{
-    \href{ mailto:{{basic.contact.email}} }{ {{basic.contact.email}} }
-    }
+\href{ mailto:{{basic.contact.email}} }{ {{basic.contact.email}} }\par
+    {% endif %}
+    {% if "phone" in basic.contact %}
+{{basic.contact.phone}}
+    {% endif %}
+  \end{Verbatim}
+    {% if "websites" in basic %}
+&
     {% endif %}
   {% endif %}
-
   {% if "websites" in basic and basic.websites|length > 0 %}
-\columnbreak
-
+  \begin{Verbatim}
     {% for website in basic.websites %}
-  \centerline{
-    \href{ {{website.url}} }{ {{website.text}} }
-  }
+\noindent\href{ {{website.url}} }{ {{website.text}} }\par
     {% endfor %}
+  \end{Verbatim}
   {% endif %}
-
-\end{multicols}
+\end{tabu*}
 {% endif %}
 {% if objective is defined %}
-
 \sectionheader{Objective}
-
 {{ objective }}
-
 \bigskip
 {% endif %}
 {% if (skills is defined and
        skills|length > 0) %}
 \sectionheader{Technical Skills Summary}
 
-\noindent\begin{tabular}{ l p{4.5in} }
+\noindent\begin{tabu} to \textwidth { @{} X[2,l] X[5,p] }
 
   {% for category in skills %}
     {% if category.skills[0] is mapping %}
@@ -89,7 +96,7 @@
     {% endif %}
   {% endfor %}
 
-\end{tabular}
+\end{tabu}
 \bigskip
 {% endif %}
 {% if experience is defined %}
