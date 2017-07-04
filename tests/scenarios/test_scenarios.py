@@ -93,12 +93,12 @@ class TestTemplateWithScenarios(object):
         tmp_tex_file.write(result.output)
 
         output = client.containers.run(
-            "thomasweise/texlive",
-            "pdflatex.sh /doc/expected.tex",
+            "pyresume/texlive",
+            "latexmk -outdir=/doc -pdf /doc/expected.tex",
             volumes={
                 str(tmpdir): "/doc/",
             },
             remove=True,
         ).decode()
         print(output)
-        assert "compilation finished successfully" in output
+        assert "Latexmk: All targets (/doc/expected.pdf) are up-to-date" in output
