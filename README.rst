@@ -114,7 +114,7 @@ Version 0.2.0
   * Post link to repositories and readthedocs in public forums:
 
     * [ ] reddit
-    * [ ] facebook
+    * [x] facebook
     * [ ] linkedin
 
 
