@@ -13,7 +13,6 @@ import os
 
 from click.testing import CliRunner
 import docker
-import py
 
 from pyresume.cli import main
 from pyresume import utils
@@ -92,13 +91,29 @@ class TestTemplateWithScenarios(object):
         tmp_tex_file = tmpdir.join("expected.tex")
         tmp_tex_file.write(result.output)
 
-        output = client.containers.run(
-            "pyresume/texlive",
-            "latexmk -outdir=/doc -pdf /doc/expected.tex",
-            volumes={
-                str(tmpdir): "/doc/",
-            },
-            remove=True,
-        ).decode()
+        resources_dir = os.path.abspath(os.path.join("docker", "resources"))
+        print(tmpdir)
+        try:
+            output = client.containers.run(
+                "pyresume/texlive",
+                "latexmk -verbose -outdir=/doc -pdf /doc/expected.tex",
+                volumes={
+                    str(tmpdir): "/doc/",
+                    resources_dir: "/resources/"
+                },
+                environment={
+                    'USER': utils.get_subprocess_output('id -nu'),
+                    'UID': utils.get_subprocess_output('id -u'),
+                    'GROUP': utils.get_subprocess_output('id -ng'),
+                    'GID': utils.get_subprocess_output('id -g'),
+                    'HOME': os.environ['HOME'],
+                },
+                remove=True,
+            ).decode()
+        except docker.errors.ContainerError as e:
+            message = str(e)
+            for line in message.split("\\n"):
+                print(line)
+            raise
         print(output)
         assert "Latexmk: All targets (/doc/expected.pdf) are up-to-date" in output

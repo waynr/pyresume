@@ -18,7 +18,7 @@ RUN export LANG=C.UTF-8 &&\
     apt-get autoremove -y &&\
     apt-get update &&\
 # install general utilities
-    apt-get install -f -y apt-utils &&\
+    apt-get install -f -y apt-utils sudo &&\
 # install utilities necessary for tlmgr
     apt-get install -f -y wget xzdec &&\
 # install TeX Live and ghostscript
@@ -51,3 +51,7 @@ RUN export LANG=C.UTF-8 &&\
     rm -f /etc/ssh/ssh_host_*
 
 VOLUME ["/doc/", "/usr/share/fonts/external/"]
+
+ADD scripts /bin/
+
+ENTRYPOINT ["/bin/entrypoint.bash"]
