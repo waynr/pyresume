@@ -1,6 +1,7 @@
 \documentclass[10pt]{article} %Sets the default text size to 11pt and class to article.
 
-\usepackage{multicol}
+\usepackage{tabu}
+
 \usepackage[colorlinks=true]{hyperref}
 
 \hoffset=0.0in
@@ -20,67 +21,43 @@
 \headheight=0pt
 \headsep=0pt 
 
+\newcommand{\sectionheader}[1] {
+\vskip \medskipamount
+\noindent\rule{0.2in}{0.4pt}{\Large \bf #1}\hrulefill
+\vskip \medskipamount
+}
+
 \begin{document}
 \centerline{
   \LARGE\textbf{ McMeow }
 }
 
-\begin{multicols}{ 3 }
-  \centerline{ 1537 Paper St }
-
-\columnbreak
-
-  \centerline{ 867 5309 }
-  \centerline{
-    \href{ mailto:meow@meow.meow }{ meow@meow.meow }
-    }
-
-\columnbreak
-
-  \centerline{
-    \href{ https://meow.meow/meow }{ Cats-R-Us }
-  }
-  \centerline{
-    \href{ https://miaow.miaow/miaow }{ Cats-N-Computers }
-  }
-
-\end{multicols}
-
-\vskip \medskipamount
-\leaders\vrule width \textwidth\vskip0.8pt
-\vskip \medskipamount
-\nointerlineskip
-\centerline{\Large Objective}
-\smallskip
-
+  \vskip \bigskipamount
+\noindent\begin{tabu*} to \textwidth { @{} X[1,l] X[1,c] X[1,r] }
+\href{mailto:meow@meow.meow}{meow@meow.meow}\par
+867 5309\par
+&
+  1537 Paper St \par
+&
+\noindent\href{ https://meow.meow/meow }{ Cats-R-Us }\par
+\noindent\href{ https://miaow.miaow/miaow }{ Cats-N-Computers }\par
+\end{tabu*}
+\sectionheader{Objective}
 I am currently looking for someone to pay me to meow.
 
-
 \bigskip
+\sectionheader{Technical Skills Summary}
 
-\vskip \medskipamount
-\leaders\vrule width \textwidth\vskip0.8pt
-\vskip \medskipamount
-\nointerlineskip
-\centerline{\Large Education}
-\smallskip
+\noindent\begin{tabu} to \textwidth { @{} X[2,l] X[5,p] }
 
-\centerline{\large\bf
-  Southern Meowniversity
-  \hfill
-  Fall 2005 - Spring 2009
-  }
-\smallskip
-\noindent\textit{ Bachelor of Meow, Computer Meongineering }\\
-\noindent\textit{ Minor, Mewthematics \& Bit Meowta }\\
-\indent\textit{ Dean's Cat List }
-\indent GPA: 3.meow/4.0
+Caterwauling Languages - Advanced & Mew, Pur \\
+Caterwauling Languages - Intermediate & Meow, Mrow \\
+Caterwauling Languages - Beginner & Miaow, Meao \\
+Cat Skills & meowing, sleeping, eating, pooping, chasing insects \\
 
-\vskip \medskipamount
-\leaders\vrule width \textwidth\vskip0.8pt
-\vskip \medskipamount
-\centerline{\Large Experience}
-\smallskip
+\end{tabu}
+\bigskip
+\sectionheader{Experience}
 
 \centerline{\large\bf
   Meow Meow Inc: Lead Meower
@@ -101,51 +78,20 @@ I am currently looking for someone to pay me to meow.
   \item Trained 5994 kittens in litterbox usage.
 \end{itemize}
 
-\vskip \medskipamount
-\leaders\vrule width \textwidth\vskip0.8pt
-\vskip \medskipamount
-\nointerlineskip
-\centerline{\Large Skills}
 
-\noindent{\large\bf Caterwauling Languages }
-\begin{multicols}{ 3 }
-  \noindent\textit { Advanced }
-    \begin{itemize}
-      \item Mew
-      \item Pur
-    \end{itemize}
+\sectionheader{Education}
 
-  \noindent\textit { Intermediate }
-    \begin{itemize}
-      \item Meow
-      \item Mrow
-    \end{itemize}
-
-  \noindent\textit { Beginner }
-    \begin{itemize}
-      \item Miaow
-      \item Meao
-    \end{itemize}
-
-\end{multicols}
-\noindent{\large\bf Cat Skills }
-\begin{multicols}{ 5 }
-  \begin{itemize}
-    \item meowing
-    \item sleeping
-    \item eating
-    \item pooping
-    \item chasing insects
-  \end{itemize}
-
-\end{multicols}
-\bigskip
-                              %
-\vskip \medskipamount
-\leaders\vrule width \textwidth\vskip0.8pt
-\vskip \medskipamount
-\nointerlineskip
-\centerline{\Large Activities}
+\centerline{\large\bf
+  Southern Meowniversity
+  \hfill
+  Fall 2005 - Spring 2009
+  }
+\smallskip
+\noindent\textit{ Bachelor of Meow, Computer Meongineering }\\
+\noindent\textit{ Minor, Mewthematics \& Bit Meowta }\\
+\indent\textit{ Dean's Cat List }
+\indent GPA: 3.meow/4.0
+\sectionheader{Activities}
 \centerline{\large\bf
   Meowing Endlessly
   \hfill
