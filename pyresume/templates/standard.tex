@@ -29,6 +29,15 @@
 \vskip \medskipamount
 }
 
+\newenvironment{myitemize}
+{ \begin{itemize}
+    \setlength{\itemsep}{0pt}
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0pt}
+}
+{ \end{itemize}
+}
+
 \begin{document}
 \centerline{
   \LARGE\textbf{ {{ basic.name }} }
@@ -96,22 +105,23 @@
 {% endif %}
 {% if experience is defined %}
 \sectionheader{Experience}
-
   {% for job in experience %}
-\centerline{\large\bf
-  {{job.company}}: {{job.title}}
-  \hfill
-  {{job.startdate}} - {{job.enddate}}
-  }
-\begin{itemize}
+\noindent{}\begin{tabu} to \textwidth {@{} X[1,l] X[c] X[r]}
+  \ &\ &\ \\
+  \large{}\bf{} {{job.company}} & \multicolumn{2}{@{} l}{ {% if 'url' in job %} {{job.url}} {% else %}\ {% endif %}} \\
+    {% for title in job.titles %}
+  \multicolumn{2}{@{} l}{\bf{}\indent{}{{title.name}} } & {{title.startdate}} - {{title.enddate}} \\
+    {% endfor %}
+\end{tabu}
     {% if job.projects|length > 0 %}
+  \begin{myitemize}
       {% for project in job.projects %}
-  \item {{ project }}
+    \item {{project}}
       {% endfor %}
+  \end{myitemize}
     {% endif %}
-\end{itemize}
+  \medskip
   {% endfor %}
-
 {% endif %}
 {% if education is defined %}
 
