@@ -27,6 +27,15 @@
 \vskip \medskipamount
 }
 
+\newenvironment{myitemize}
+{ \begin{itemize}
+    \setlength{\itemsep}{0pt}
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0pt}
+}
+{ \end{itemize}
+}
+
 \begin{document}
 \centerline{
   \LARGE\textbf{ McMeow }

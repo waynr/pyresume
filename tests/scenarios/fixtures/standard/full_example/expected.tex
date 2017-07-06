@@ -27,6 +27,15 @@
 \vskip \medskipamount
 }
 
+\newenvironment{myitemize}
+{ \begin{itemize}
+    \setlength{\itemsep}{0pt}
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0pt}
+}
+{ \end{itemize}
+}
+
 \begin{document}
 \centerline{
   \LARGE\textbf{ McMeow }
@@ -58,26 +67,24 @@ Cat Skills & meowing, sleeping, eating, pooping, chasing insects \\
 \end{tabu}
 \bigskip
 \sectionheader{Experience}
-
-\centerline{\large\bf
-  Meow Meow Inc: Lead Meower
-  \hfill
-  April 2016 - May 2017
-  }
-\begin{itemize}
-  \item Tech lead on project involving meowing until food appears.
-  \item Mrowled at the moon.
-\end{itemize}
-\centerline{\large\bf
-  Mewling Daycare: Quality Eng.
-  \hfill
-  March 2014 - March 2016
-  }
-\begin{itemize}
-  \item Designated mew troubleshooter.
-  \item Trained 5994 kittens in litterbox usage.
-\end{itemize}
-
+\noindent{}\begin{tabu} to \textwidth {@{} X[1,l] X[c] X[r]}
+  \ &\ &\ \\
+  \large{}\bf{} Meow Meow Inc & \multicolumn{2}{@{} l}{ \ } \\
+\end{tabu}
+  \begin{myitemize}
+    \item Tech lead on project involving meowing until food appears.
+    \item Mrowled at the moon.
+  \end{myitemize}
+  \medskip
+\noindent{}\begin{tabu} to \textwidth {@{} X[1,l] X[c] X[r]}
+  \ &\ &\ \\
+  \large{}\bf{} Mewling Daycare & \multicolumn{2}{@{} l}{ \ } \\
+\end{tabu}
+  \begin{myitemize}
+    \item Designated mew troubleshooter.
+    \item Trained 5994 kittens in litterbox usage.
+  \end{myitemize}
+  \medskip
 
 \sectionheader{Education}
 
