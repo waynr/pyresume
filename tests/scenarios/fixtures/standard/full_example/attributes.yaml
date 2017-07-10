@@ -27,17 +27,19 @@ education:
 
 experience:
   - company: Meow Meow Inc
-    title: Lead Meower
-    startdate: April 2016
-    enddate: May 2017
+    titles:
+      - name: Lead Meower
+        startdate: April 2016
+        enddate: May 2017
     projects:
       - "Tech lead on project involving meowing until food appears."
       - "Mrowled at the moon."
   
   - company: Mewling Daycare
-    title: Quality Eng.
-    startdate: March 2014
-    enddate: March 2016
+    titles:
+      - name: Quality Eng.
+        startdate: March 2014
+        enddate: March 2016
     projects:
       - "Designated mew troubleshooter."
       - "Trained 5994 kittens in litterbox usage."
@@ -52,7 +54,6 @@ activities:
 
 skills:
   - category: Caterwauling Languages
-    columns: "3"
     skills:
       - category: Advanced
         skills:
@@ -67,7 +68,6 @@ skills:
           - Miaow
           - Meao
   - category: Cat Skills
-    columns: "5"
     skills:
       - meowing
       - sleeping
