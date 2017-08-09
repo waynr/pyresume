@@ -95,7 +95,7 @@ class TestTemplateWithScenarios(object):
         print(tmpdir)
         try:
             output = client.containers.run(
-                "pyresume/texlive",
+                "waynr/texlive-pyresume",
                 "latexmk -verbose -outdir=/doc -pdf /doc/expected.tex",
                 volumes={
                     str(tmpdir): "/doc/",
