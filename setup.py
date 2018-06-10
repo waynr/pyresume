@@ -12,7 +12,8 @@ with open('HISTORY.rst') as history_file:
 
 requirements = [
     'Click>=6.0',
-    # TODO: put package requirements here
+    'PyYAML==3.12',
+    'jinja2==2.10',
 ]
 
 test_requirements = [
