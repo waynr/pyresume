@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+from setuptools import find_packages
 from setuptools import setup
 
 with open('README.rst') as readme_file:
@@ -26,9 +27,7 @@ setup(
     author="Wayne Warren",
     author_email='wayne.warren.s@gmail.com',
     url='https://github.com/waynr/pyresume',
-    packages=[
-        'pyresume',
-    ],
+    packages=find_packages(),
     package_dir={'pyresume':
                  'pyresume'},
     entry_points={
