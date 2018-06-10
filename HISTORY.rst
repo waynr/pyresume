@@ -2,7 +2,13 @@
 History
 =======
 
-0.0.0 (2018-06-09)
+0.1.2 (2018-06-10)
+------------------
+
+* Fix runtime dependencies.
+* Change encrypted pypi password in .travis.yml.
+
+0.1.1 (2018-06-09)
 ------------------
 
 * Fix packaging bug - https://github.com/waynr/pyresume/issues/95

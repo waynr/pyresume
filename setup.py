@@ -22,7 +22,7 @@ test_requirements = [
 
 setup(
     name='pyresume',
-    version='0.1.1',
+    version='0.1.2',
     description="Populate a predefined LaTeX template with contents defined in YAML to build your resume.",
     long_description=readme + '\n\n' + history,
     author="Wayne Warren",
