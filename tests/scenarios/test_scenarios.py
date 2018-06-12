@@ -98,8 +98,8 @@ class TestTemplateWithScenarios(object):
                 "waynr/texlive-pyresume",
                 "latexmk -verbose -outdir=/doc -pdf /doc/expected.tex",
                 volumes={
-                    str(tmpdir): "/doc/",
-                    resources_dir: "/resources/"
+                    str(tmpdir): {"bind": "/doc/", "mode": "rw"},
+                    resources_dir: {"bind": "/resources/", "mode": "rw"},
                 },
                 environment={
                     'USER': utils.get_subprocess_output('id -nu'),
