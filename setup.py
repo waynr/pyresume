@@ -28,9 +28,9 @@ setup(
     author="Wayne Warren",
     author_email='wayne.warren.s@gmail.com',
     url='https://github.com/waynr/pyresume',
-    packages=find_packages(),
-    package_dir={'pyresume':
-                 'pyresume'},
+    packages=find_packages('src'),
+    package_dir={'':
+                 'src'},
     entry_points={
         'console_scripts': [
             'pyresume=pyresume.cli:main'
