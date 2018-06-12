@@ -22,15 +22,15 @@ test_requirements = [
 
 setup(
     name='pyresume',
-    version='0.1.2',
+    version='0.1.3',
     description="Populate a predefined LaTeX template with contents defined in YAML to build your resume.",
     long_description=readme + '\n\n' + history,
     author="Wayne Warren",
     author_email='wayne.warren.s@gmail.com',
     url='https://github.com/waynr/pyresume',
-    packages=find_packages(),
-    package_dir={'pyresume':
-                 'pyresume'},
+    packages=find_packages('src'),
+    package_dir={'':
+                 'src'},
     entry_points={
         'console_scripts': [
             'pyresume=pyresume.cli:main'
