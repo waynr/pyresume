@@ -68,12 +68,17 @@ Or download the `tarball`_:
 
     $ curl  -OL https://github.com/waynr/pyresume/tarball/master
 
-Once you have a copy of the source, you can install it with:
+Once you have a copy of the source, you can run a Docker image:
+
+.. code-block:: console
+
+    $ docker build --tag 'waynr/pyresume:latest' .
+
+You can also install it directly with:
 
 .. code-block:: console
 
     $ python setup.py install
-
 
 .. _Github repo: https://github.com/waynr/pyresume
 .. _tarball: https://github.com/waynr/pyresume/tarball/master
