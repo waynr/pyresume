@@ -116,4 +116,5 @@ class TestTemplateWithScenarios(object):
                 print(line)
             raise
         print(output)
-        assert "Latexmk: All targets (/doc/expected.pdf) are up-to-date" in output
+        assert "Latexmk: All targets (/doc/expected.pdf) are up-to-date" \
+            in output
