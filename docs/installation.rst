@@ -68,11 +68,13 @@ Or download the `tarball`_:
 
     $ curl  -OL https://github.com/waynr/pyresume/tarball/master
 
-Once you have a copy of the source, you can run a Docker image:
+Once you have a copy of the source, you can run a Docker image, which should
+bind mount PyResume source and a directory with YAML to convert:
 
 .. code-block:: console
 
     $ docker build --tag 'waynr/pyresume:latest' .
+    $ docker run --tty --interactive --volume /path/to/pyresume:/src/pyresume --volume /path/to/yaml/files:/mnt/pyresume waynr/pyresume:latest /bin/bash
 
 You can also install it directly with:
 

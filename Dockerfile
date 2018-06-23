@@ -1,6 +1,9 @@
 FROM debian:9
 MAINTAINER wayne warren <wayne.warren.s@gmail.com>
 
+# The type of build to invoke from setup.py.
+ARG setup="install"
+
 VOLUME \
   # Location of pyresume source.
   /src/pyresume \
@@ -19,7 +22,7 @@ RUN \
   apt-get -fy install ca-certificates python3 python3-setuptools &&\
   # Install pyresume.
   cd /src/pyresume &&\
-  python3 setup.py develop &&\
+  python3 setup.py $setup &&\
   # Clean up all temporary files.
   apt-get clean &&\
   apt-get autoclean -y &&\
