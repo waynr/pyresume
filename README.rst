@@ -29,7 +29,6 @@ are free to try alternative templates and generate resumes in different formats
 without the tedium of manually reformatting.
 
 
-* Free software: GNU General Public License v3
 * Documentation: https://pyresume.readthedocs.io.
 
 
