@@ -59,52 +59,6 @@ Planned
 * Support some kind of html output format.
 * Create new resume templates using cookiecutter.
 
-Roadmap
--------
-
-Version 0.2.0
-+++++++++++++
-
-* Meta
-
-  * [ ] Move this Roadmap elsewhere, maybe generate github or bitbucket issues
-    and labels to track the work.
-  * Post link to repositories and readthedocs in public forums:
-
-    * [ ] reddit
-    * [x] facebook
-    * [ ] linkedin
-
-
-* User Input Validation
-
-  * Use voluptuous to validate data structures passed in by users.
-
-    * [ ] Implement validation in same directory as template.
-    * [ ] Write tests for validation function to concretely define various
-      corner cases (the exceptions and/or warnings producted by validation).
-
-* External Templates
-
-  * [ ] From local file
-  * [ ] From git repo
-  * [ ] Cookiecutter repo for new template repos
-
-* Tests
-
-  * scenario-based
-
-    * [ ] external git repo template tests (http://)
-    * [ ] external git repo template tests (https://)
-    * [ ] external git repo template tests (git://)
-    * [ ] external git repo template tests (ssh://)
-
-* Command line
-
-  * [ ] parameter to specify location of LaTeX templates
-  * [ ] add 'create pdf' subcommand that uses docker (if available) to run texlive
-    and generate a resume
-
 
 Similar Projects
 ----------------
