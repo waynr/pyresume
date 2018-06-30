@@ -46,7 +46,7 @@ Current
 * Default LaTeX template includes support for:
 
   * Contact info
-  * Education  
+  * Education
   * Experience
   * Skills (up to two levels of subcategories supported)
   * Activities
