@@ -29,7 +29,6 @@ are free to try alternative templates and generate resumes in different formats
 without the tedium of manually reformatting.
 
 
-* Free software: GNU General Public License v3
 * Documentation: https://pyresume.readthedocs.io.
 
 
@@ -46,7 +45,7 @@ Current
 * Default LaTeX template includes support for:
 
   * Contact info
-  * Education  
+  * Education
   * Experience
   * Skills (up to two levels of subcategories supported)
   * Activities
@@ -59,93 +58,6 @@ Planned
 * Support externally-defined Jinja2 LaTeX templates.
 * Support some kind of html output format.
 * Create new resume templates using cookiecutter.
-
-Roadmap
--------
-
-Version 0.1.0
-+++++++++++++
-
-* Documentation
-
-  * [x] Introduce problem being solved.
-  * [x] Research and refer to similar tools/services.
-
-  * Basic Usage instructions
-
-    * [x] Running from CLI on Linux
-    * [x] Running from CLI using Docker on any platform
-
-  * Advanced Usage instructions
-
-    * [x] Generate scenario test fixtures
-    * [x] Describe workflow for storing resume in a repo as yaml and using
-      pyresume+latex to generate PDFs.
-
-* Tests
-
-  * scenario
-
-    * docker/texlive integration tests to validate PDF generation
-
-      * [x] Find/create docker image to provide latex packages
-      * [x] Get docker integration test(s) running locally.
-      * [x] Research docker in Travis, figure out what kind of foolery is
-        necessary to make docker tests run there.
-
-* Templates
-
-  * Initial templates packaged w/ pyresume
-
-    * [x] Jinja2 template with basic layout
-    * [x] stored as setuptools resource
-
-* Command line
-
-  * [x] change 'tex' subcommand to 'create'/'create tex'
-
-Version 0.2.0
-+++++++++++++
-
-* Meta
-
-  * [ ] Move this Roadmap elsewhere, maybe generate github or bitbucket issues
-    and labels to track the work.
-  * Post link to repositories and readthedocs in public forums:
-
-    * [ ] reddit
-    * [x] facebook
-    * [ ] linkedin
-
-
-* User Input Validation
-
-  * Use voluptuous to validate data structures passed in by users.
-
-    * [ ] Implement validation in same directory as template.
-    * [ ] Write tests for validation function to concretely define various
-      corner cases (the exceptions and/or warnings producted by validation).
-
-* External Templates
-
-  * [ ] From local file
-  * [ ] From git repo
-  * [ ] Cookiecutter repo for new template repos
-
-* Tests
-
-  * scenario-based
-
-    * [ ] external git repo template tests (http://)
-    * [ ] external git repo template tests (https://)
-    * [ ] external git repo template tests (git://)
-    * [ ] external git repo template tests (ssh://)
-
-* Command line
-
-  * [ ] parameter to specify location of LaTeX templates
-  * [ ] add 'create pdf' subcommand that uses docker (if available) to run texlive
-    and generate a resume
 
 
 Similar Projects
