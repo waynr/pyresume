@@ -1,6 +1,6 @@
 deploy:
   on:
-    condition: "$TOXENV == py35"
+    condition: "$TOXENV == py36"
     repo: waynr/pyresume
     tags: true
   distributions: sdist bdist_wheel
@@ -9,11 +9,11 @@ deploy:
   provider: pypi
   user: waynr
 env:
-- TOXENV=py35
+- TOXENV=py36
 - TOXENV=flake8
 install: pip install -U tox
 language: python
-python: 3.5
+python: 3.6
 script: tox -e ${TOXENV}
 sudo: required
 services:

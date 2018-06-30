@@ -10,8 +10,8 @@ Installation
 Requirements
 ------------
 
-Python >= 3.5
-  The only tested version of python so far. 
+Python >= 3.6
+  The only tested version of python so far.
 
 For Generating PDFs
 +++++++++++++++++++
