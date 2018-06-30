@@ -63,47 +63,6 @@ Planned
 Roadmap
 -------
 
-Version 0.1.0
-+++++++++++++
-
-* Documentation
-
-  * [x] Introduce problem being solved.
-  * [x] Research and refer to similar tools/services.
-
-  * Basic Usage instructions
-
-    * [x] Running from CLI on Linux
-    * [x] Running from CLI using Docker on any platform
-
-  * Advanced Usage instructions
-
-    * [x] Generate scenario test fixtures
-    * [x] Describe workflow for storing resume in a repo as yaml and using
-      pyresume+latex to generate PDFs.
-
-* Tests
-
-  * scenario
-
-    * docker/texlive integration tests to validate PDF generation
-
-      * [x] Find/create docker image to provide latex packages
-      * [x] Get docker integration test(s) running locally.
-      * [x] Research docker in Travis, figure out what kind of foolery is
-        necessary to make docker tests run there.
-
-* Templates
-
-  * Initial templates packaged w/ pyresume
-
-    * [x] Jinja2 template with basic layout
-    * [x] stored as setuptools resource
-
-* Command line
-
-  * [x] change 'tex' subcommand to 'create'/'create tex'
-
 Version 0.2.0
 +++++++++++++
 
