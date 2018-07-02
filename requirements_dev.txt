@@ -9,5 +9,5 @@ coverage==4.5.1
 Sphinx==1.7.5
 pygments==2.2.0
 cryptography==2.2.2
-PyYAML==4.2b2
+PyYAML==4.2b4
 pytest==3.6.2
