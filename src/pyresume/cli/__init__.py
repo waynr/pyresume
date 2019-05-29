@@ -25,14 +25,14 @@ def create():
 
 
 @create.command()
-@click.argument('yaml_paths',
-                nargs=-1,
-                callback=validate_yaml_paths,
-                type=click.Path(exists=True,
-                                file_okay=True,
-                                dir_okay=False,
-                                readable=True,
-                                resolve_path=True))
+@click.argument(
+    "yaml_paths",
+    nargs=-1,
+    callback=validate_yaml_paths,
+    type=click.Path(
+        exists=True, file_okay=True, dir_okay=False, readable=True, resolve_path=True
+    ),
+)
 def tex(yaml_paths):
     """Generate LaTeX output.
 
@@ -43,9 +43,9 @@ def tex(yaml_paths):
     env = Environment(
         trim_blocks=True,
         lstrip_blocks=True,
-        loader=PackageLoader('pyresume', 'templates'),
+        loader=PackageLoader("pyresume", "templates"),
     )
-    template = env.get_template('standard.tex')
+    template = env.get_template("standard.tex")
 
     resume_data = {}
     for path in yaml_paths:
