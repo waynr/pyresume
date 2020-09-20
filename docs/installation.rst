@@ -10,8 +10,8 @@ Installation
 Requirements
 ------------
 
-Python >= 3.5
-  The only tested version of python so far. 
+Python >= 3.6
+  The only tested version of python so far.
 
 For Generating PDFs
 +++++++++++++++++++
@@ -68,12 +68,19 @@ Or download the `tarball`_:
 
     $ curl  -OL https://github.com/waynr/pyresume/tarball/master
 
-Once you have a copy of the source, you can install it with:
+Once you have a copy of the source, you can run a Docker image, which should
+bind mount PyResume source and a directory with YAML to convert:
+
+.. code-block:: console
+
+    $ docker build --tag 'waynr/pyresume:latest' .
+    $ docker run --tty --interactive --volume /path/to/pyresume:/src/pyresume --volume /path/to/yaml/files:/mnt/pyresume waynr/pyresume:latest /bin/bash
+
+You can also install it directly with:
 
 .. code-block:: console
 
     $ python setup.py install
-
 
 .. _Github repo: https://github.com/waynr/pyresume
 .. _tarball: https://github.com/waynr/pyresume/tarball/master
