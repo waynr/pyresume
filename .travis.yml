@@ -10,7 +10,7 @@ deploy:
   user: waynr
 env:
 - TOXENV=py35
-- TOXENV=black
+- TOXENV=black-check
 install: pip install -U tox
 language: python
 python: 3.7
