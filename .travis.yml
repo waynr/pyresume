@@ -1,6 +1,6 @@
 deploy:
   on:
-    condition: "$TOXENV == py35"
+    condition: "$TOXENV == py37"
     repo: waynr/pyresume
     tags: true
   distributions: sdist bdist_wheel
@@ -9,7 +9,7 @@ deploy:
   provider: pypi
   user: waynr
 env:
-- TOXENV=py35
+- TOXENV=py37
 - TOXENV=black-check
 install: pip install --pre -U tox black
 language: python
