@@ -16,7 +16,7 @@ before_install:
   - cd docker && docker build -t waynr/texlive-pyresume:latest ./
 install: pip install -U tox
 language: python
-python: 3.5
+python: 3.7
 script: tox -e ${TOXENV}
 sudo: required
 services:

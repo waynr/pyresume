@@ -152,7 +152,7 @@ Alternatively, you could just run the entire test suite
 
 .. code-block:: console
 
-   $ tox -e py35
+   $ tox -e py37
 
 Assuming there new resume templates are eventually added, creating the fixture
 might look something like:
