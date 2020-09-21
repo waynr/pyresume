@@ -11,7 +11,7 @@ deploy:
 env:
 - TOXENV=py35
 - TOXENV=black-check
-install: pip install -U tox
+install: pip install --pre -U tox black
 language: python
 python: 3.7
 script: tox -e ${TOXENV}
