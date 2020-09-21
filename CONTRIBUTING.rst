@@ -88,17 +88,23 @@ Ready to contribute? Here's how to set up `pyresume` for local development.
 
    Now you can make your changes locally.
 
-5. When you're done making changes, check that your changes pass flake8 and the tests, including testing other Python versions with tox:
+5. When you've made your changes to pyresume source, run the tests:
 
 .. code-block:: console
 
-    $ flake8 pyresume tests
-    $ python setup.py test or py.test
-    $ tox
+    $ tox -e py37
 
-   To get flake8 and tox, just pip install them into your virtualenv.
+   To get flake8 and tox, pip install them into your virtualenv.
 
-6. Commit your changes and push your branch to GitHub:
+6. When you're done making changes to code and tests, please format your code (CI tests will fail if you don't):
+
+.. code-block:: console
+
+    $ tox -e black-fmt
+
+   To get flake8 and tox, pip install them into your virtualenv.
+
+7. Commit your changes and push your branch to GitHub:
 
 .. code-block:: console
 
@@ -106,7 +112,7 @@ Ready to contribute? Here's how to set up `pyresume` for local development.
     $ git commit -m "Your detailed description of your changes."
     $ git push origin name-of-your-bugfix-or-feature
 
-7. Submit a pull request through the GitHub website.
+8. Submit a pull request through the GitHub website.
 
 Pull Request Guidelines
 -----------------------
