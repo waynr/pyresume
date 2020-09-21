@@ -10,7 +10,6 @@ deploy:
   user: waynr
 env:
 - TOXENV=py35
-- TOXENV=flake8
 - TOXENV=black
 before_install:
   - cd docker && docker build -t waynr/texlive-pyresume:latest ./
