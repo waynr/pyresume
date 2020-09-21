@@ -11,8 +11,6 @@ deploy:
 env:
 - TOXENV=py35
 - TOXENV=black
-before_install:
-  - cd docker && docker build -t waynr/texlive-pyresume:latest ./
 install: pip install -U tox
 language: python
 python: 3.7
