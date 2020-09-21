@@ -21,3 +21,6 @@ script: tox -e ${TOXENV}
 sudo: required
 services:
 - docker
+branches:
+  only:
+    - master
