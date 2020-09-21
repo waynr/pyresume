@@ -11,14 +11,13 @@ from pyresume.cli.validation import validate_yaml_paths
 
 @click.group()
 def main():
-    """ Console script for pyresume.
-    """
+    """Console script for pyresume."""
     pass
 
 
 @main.group()
 def create():
-    """ Create a resume of the specified type. The type is either "tex" by
+    """Create a resume of the specified type. The type is either "tex" by
     default or whatever is specified as the next subcommand.
     """
     pass

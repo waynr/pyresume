@@ -27,9 +27,11 @@ def get_scenarios():
         for scenario in os.listdir(os.path.join(fixtures_top_dir, template)):
             scenario_path = os.path.join(fixtures_top_dir, template, scenario)
             scenario_id = "{0}-{1}".format(template, scenario)
-            yaml_files = [os.path.join(scenario_path, n)
-                          for n in os.listdir(scenario_path)
-                          if n.endswith(".yaml")]
+            yaml_files = [
+                os.path.join(scenario_path, n)
+                for n in os.listdir(scenario_path)
+                if n.endswith(".yaml")
+            ]
             output_file = os.path.join(scenario_path, "expected.tex")
             scenarios.append((scenario_id, yaml_files, output_file))
     return scenarios
@@ -51,17 +53,15 @@ class TestTemplateWithScenarios(object):
     scenarios = get_scenarios()
 
     def test_scenario_exists(self, yaml_file_list, expected_output_file):
-        """ Validate that the files necessary to run tests for each scenaro
+        """Validate that the files necessary to run tests for each scenaro
         exist.
         """
         for f in yaml_file_list:
             assert os.path.exists(f)
         assert os.path.exists(expected_output_file)
 
-    def test_scenario_expected_output(self,
-                                      yaml_file_list,
-                                      expected_output_file):
-        """ Validate that when the pyresume CLI is run with the given
+    def test_scenario_expected_output(self, yaml_file_list, expected_output_file):
+        """Validate that when the pyresume CLI is run with the given
         scenario's yaml file(s), the output produce is equivalent to that
         scenario's expected LaTeX output.
         """
@@ -74,15 +74,15 @@ class TestTemplateWithScenarios(object):
 
         assert result.output == expected_output
 
-    def test_scenario_output_compiles(self,
-                                      yaml_file_list,
-                                      expected_output_file,
-                                      tmpdir):
-        """ Validate that the generated tex output can be used to produce a
+    def test_scenario_output_compiles(
+        self, yaml_file_list, expected_output_file, tmpdir
+    ):
+        """Validate that the generated tex output can be used to produce a
         PDF using a known, publicly-available docker image.
         """
         docker_api_version = utils.get_subprocess_output(
-            'docker version --format \'{{.Server.APIVersion}}\'')
+            "docker version --format '{{.Server.APIVersion}}'"
+        )
         client = docker.from_env(version=docker_api_version)
 
         runner = CliRunner()
@@ -102,11 +102,11 @@ class TestTemplateWithScenarios(object):
                     resources_dir: {"bind": "/resources/", "mode": "rw"},
                 },
                 environment={
-                    'USER': utils.get_subprocess_output('id -nu'),
-                    'UID': utils.get_subprocess_output('id -u'),
-                    'GROUP': utils.get_subprocess_output('id -ng'),
-                    'GID': utils.get_subprocess_output('id -g'),
-                    'HOME': os.environ['HOME'],
+                    "USER": utils.get_subprocess_output("id -nu"),
+                    "UID": utils.get_subprocess_output("id -u"),
+                    "GROUP": utils.get_subprocess_output("id -ng"),
+                    "GID": utils.get_subprocess_output("id -g"),
+                    "HOME": os.environ["HOME"],
                 },
                 remove=True,
             ).decode()

@@ -10,11 +10,14 @@ deploy:
   user: waynr
 env:
 - TOXENV=py35
-- TOXENV=flake8
-install: pip install -U tox
+- TOXENV=black-check
+install: pip install --pre -U tox black
 language: python
-python: 3.5
+python: 3.7
 script: tox -e ${TOXENV}
 sudo: required
 services:
 - docker
+branches:
+  only:
+    - master
