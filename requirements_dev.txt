@@ -1,4 +1,4 @@
-pip==20.2.3
+pip==20.3.2
 bumpversion==0.6.0
 docker==4.3.1
 wheel==0.31.1
