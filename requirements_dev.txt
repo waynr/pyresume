@@ -5,7 +5,7 @@ wheel==0.31.1
 watchdog==0.10.3
 tox==3.4.0
 coverage==4.5.3
-Sphinx==3.2.1
+Sphinx==4.3.1
 pygments==2.2.0
 cryptography==2.4.1
 PyYAML==5.3.1
