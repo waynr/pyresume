@@ -3,7 +3,7 @@ bumpversion==0.6.0
 docker==4.3.1
 wheel==0.31.1
 watchdog==0.10.3
-tox==3.4.0
+tox==4.2.7
 coverage==4.5.3
 Sphinx==3.2.1
 pygments==2.2.0
